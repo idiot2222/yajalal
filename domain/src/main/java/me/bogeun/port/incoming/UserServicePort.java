@@ -1,8 +1,8 @@
 package me.bogeun.port.incoming;
 
 import me.bogeun.domain.User;
-import me.bogeun.payload.UserCreateDto;
-import me.bogeun.payload.UserUpdateDto;
+import me.bogeun.payload.user.UserCreateDto;
+import me.bogeun.payload.user.UserUpdateDto;
 
 import java.util.List;
 

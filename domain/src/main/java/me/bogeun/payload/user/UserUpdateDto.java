@@ -1,4 +1,4 @@
-package me.bogeun.payload;
+package me.bogeun.payload.user;
 
 import me.bogeun.domain.Gender;
 

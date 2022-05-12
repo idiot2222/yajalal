@@ -2,8 +2,8 @@ package me.bogeun.adapter;
 
 import lombok.RequiredArgsConstructor;
 import me.bogeun.domain.User;
-import me.bogeun.payload.UserCreateDto;
-import me.bogeun.payload.UserUpdateDto;
+import me.bogeun.payload.user.UserCreateDto;
+import me.bogeun.payload.user.UserUpdateDto;
 import me.bogeun.port.incoming.UserServicePort;
 import me.bogeun.port.outgoing.UserPersistencePort;
 
