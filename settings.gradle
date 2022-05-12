@@ -1,0 +1,3 @@
+rootProject.name = 'yajalal'
+include 'domain'
+
