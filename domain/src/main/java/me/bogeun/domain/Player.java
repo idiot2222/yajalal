@@ -1,5 +1,7 @@
 package me.bogeun.domain;
 
+import me.bogeun.payload.player.PlayerUpdateDto;
+
 public class Player {
 
     private Long id;
@@ -11,4 +13,24 @@ public class Player {
     private Position position;
 
     private String description;
+
+    public void updateInfo(PlayerUpdateDto updateDto) {
+        int weight = updateDto.getWeight();
+        int length = updateDto.getLength();
+        String description = updateDto.getDescription();
+        Position position = updateDto.getPosition();
+
+        if(weight != 0) {
+            this.weight = weight;
+        }
+        if(length != 0) {
+            this.length = length;
+        }
+        if(description != null) {
+            this.description = description;
+        }
+        if(position != null) {
+            this.position = position;
+        }
+    }
 }

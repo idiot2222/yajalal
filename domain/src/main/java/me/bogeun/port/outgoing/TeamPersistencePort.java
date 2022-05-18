@@ -1,6 +1,6 @@
 package me.bogeun.port.outgoing;
 
-import me.bogeun.domain.User;
+import me.bogeun.domain.Team;
 import me.bogeun.payload.team.TeamCreateDto;
 import me.bogeun.payload.team.TeamUpdateDto;
 
@@ -10,11 +10,11 @@ public interface TeamPersistencePort {
 
     void createTeam(TeamCreateDto createDto);
 
-    User getTeamById(Long teamId);
+    Team getTeamById(Long teamId);
 
-    List<User> getAllTeamList();
+    List<Team> getAllTeamList();
 
-    User updateTeam(TeamUpdateDto updateDto);
+    Team updateTeam(TeamUpdateDto updateDto);
 
     void deleteTeam(Long teamId);
 

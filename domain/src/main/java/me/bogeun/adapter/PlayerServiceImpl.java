@@ -1,7 +1,7 @@
 package me.bogeun.adapter;
 
 import lombok.RequiredArgsConstructor;
-import me.bogeun.domain.User;
+import me.bogeun.domain.Player;
 import me.bogeun.payload.player.PlayerCreateDto;
 import me.bogeun.payload.player.PlayerUpdateDto;
 import me.bogeun.port.incoming.PlayerServicePort;
@@ -20,17 +20,17 @@ public class PlayerServiceImpl implements PlayerServicePort {
     }
 
     @Override
-    public User getPlayerById(Long playerId) {
+    public Player getPlayerById(Long playerId) {
         return playerPersistencePort.getPlayerById(playerId);
     }
 
     @Override
-    public List<User> getAllPlayerList() {
+    public List<Player> getAllPlayerList() {
         return playerPersistencePort.getAllPlayerList();
     }
 
     @Override
-    public User updatePlayer(PlayerUpdateDto updateDto) {
+    public Player updatePlayer(PlayerUpdateDto updateDto) {
         return playerPersistencePort.updatePlayer(updateDto);
     }
 

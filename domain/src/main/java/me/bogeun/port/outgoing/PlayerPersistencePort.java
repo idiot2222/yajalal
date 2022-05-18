@@ -1,7 +1,6 @@
 package me.bogeun.port.outgoing;
 
 import me.bogeun.domain.Player;
-import me.bogeun.domain.User;
 import me.bogeun.payload.player.PlayerCreateDto;
 import me.bogeun.payload.player.PlayerUpdateDto;
 

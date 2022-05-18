@@ -1,7 +1,7 @@
 package me.bogeun.adapter;
 
 import lombok.RequiredArgsConstructor;
-import me.bogeun.domain.User;
+import me.bogeun.domain.Team;
 import me.bogeun.payload.team.TeamCreateDto;
 import me.bogeun.payload.team.TeamUpdateDto;
 import me.bogeun.port.incoming.TeamServicePort;
@@ -20,17 +20,17 @@ public class TeamServiceImpl implements TeamServicePort {
     }
 
     @Override
-    public User getTeamById(Long teamId) {
+    public Team getTeamById(Long teamId) {
         return teamPersistencePort.getTeamById(teamId);
     }
 
     @Override
-    public List<User> getAllTeamList() {
+    public List<Team> getAllTeamList() {
         return teamPersistencePort.getAllTeamList();
     }
 
     @Override
-    public User updateTeam(TeamUpdateDto updateDto) {
+    public Team updateTeam(TeamUpdateDto updateDto) {
         return teamPersistencePort.updateTeam(updateDto);
     }
 

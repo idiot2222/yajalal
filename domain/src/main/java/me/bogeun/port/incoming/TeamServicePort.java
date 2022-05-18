@@ -1,8 +1,6 @@
 package me.bogeun.port.incoming;
 
-import me.bogeun.domain.User;
-import me.bogeun.payload.player.PlayerCreateDto;
-import me.bogeun.payload.player.PlayerUpdateDto;
+import me.bogeun.domain.Team;
 import me.bogeun.payload.team.TeamCreateDto;
 import me.bogeun.payload.team.TeamUpdateDto;
 
@@ -12,11 +10,11 @@ public interface TeamServicePort {
 
     void createTeam(TeamCreateDto createDto);
 
-    User getTeamById(Long teamId);
+    Team getTeamById(Long teamId);
 
-    List<User> getAllTeamList();
+    List<Team> getAllTeamList();
 
-    User updateTeam(TeamUpdateDto updateDto);
+    Team updateTeam(TeamUpdateDto updateDto);
 
     void deleteTeam(Long teamId);
 
