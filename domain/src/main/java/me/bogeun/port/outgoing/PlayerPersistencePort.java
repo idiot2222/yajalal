@@ -1,5 +1,6 @@
 package me.bogeun.port.outgoing;
 
+import me.bogeun.domain.Player;
 import me.bogeun.domain.User;
 import me.bogeun.payload.player.PlayerCreateDto;
 import me.bogeun.payload.player.PlayerUpdateDto;
@@ -10,11 +11,11 @@ public interface PlayerPersistencePort {
 
     void createPlayer(PlayerCreateDto createDto);
 
-    User getPlayerById(Long playerId);
+    Player getPlayerById(Long playerId);
 
-    List<User> getAllPlayerList();
+    List<Player> getAllPlayerList();
 
-    User updatePlayer(PlayerUpdateDto updateDto);
+    Player updatePlayer(PlayerUpdateDto updateDto);
 
     void deletePlayer(Long playerId);
 
