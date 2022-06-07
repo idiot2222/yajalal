@@ -18,35 +18,34 @@ public class TeamPersistenceImpl implements TeamPersistencePort {
     private final TeamMapper teamMapper;
 
     @Override
-    public void createTeam(TeamCreateDto createDto) {
-        TeamEntity team = teamMapper.createDtoToEntity(createDto);
+    public Team createTeam(TeamCreateDto createDto) {
+        TeamEntity teamEntity = teamMapper.createDtoToEntity(createDto);
 
-        teamRepository.save(team);
+        teamRepository.save(teamEntity);
+
+        return teamMapper.entityToTeam(teamEntity);
     }
 
     @Override
     public Team getTeamById(Long teamId) {
-        TeamEntity entity = teamRepository.findById(teamId).orElseThrow(() -> new IllegalArgumentException("invalid team id."));
+        TeamEntity teamEntity = teamRepository.findById(teamId).orElseThrow(() -> new IllegalArgumentException("invalid team id."));
 
-        return teamMapper.entityToTeam(entity);
+        return teamMapper.entityToTeam(teamEntity);
     }
 
     @Override
     public Team updateTeam(TeamUpdateDto updateDto) {
-        Team team = getTeamById(updateDto.getId());
-        team.update(updateDto);
+        TeamEntity teamEntity = teamMapper.updateDtoToEntity(updateDto);
+        teamRepository.save(teamEntity);
 
-        TeamEntity entity = teamMapper.teamToEntity(team);
-        teamRepository.save(entity);
-
-        return team;
+        return teamMapper.entityToTeam(teamEntity);
     }
 
     @Override
     public void deleteTeam(Long teamId) {
         Team team = getTeamById(teamId);
-        TeamEntity entity = teamMapper.teamToEntity(team);
+        TeamEntity teamEntity = teamMapper.teamToEntity(team);
 
-        teamRepository.delete(entity);
+        teamRepository.delete(teamEntity);
     }
 }

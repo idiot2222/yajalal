@@ -3,6 +3,7 @@ package me.bogeun.mapper;
 import me.bogeun.domain.Team;
 import me.bogeun.entity.TeamEntity;
 import me.bogeun.payload.team.TeamCreateDto;
+import me.bogeun.payload.team.TeamUpdateDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
@@ -15,4 +16,7 @@ public interface TeamMapper {
     Team entityToTeam(TeamEntity entity);
 
     TeamEntity teamToEntity(Team team);
+
+    TeamEntity updateDtoToEntity(TeamUpdateDto updateDto);
+
 }

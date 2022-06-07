@@ -6,7 +6,7 @@ import me.bogeun.payload.team.TeamUpdateDto;
 
 public interface TeamPersistencePort {
 
-    void createTeam(TeamCreateDto createDto);
+    Team createTeam(TeamCreateDto createDto);
 
     Team getTeamById(Long teamId);
 
