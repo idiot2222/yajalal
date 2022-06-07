@@ -1,7 +1,7 @@
 package me.bogeun.repository;
 
-import me.bogeun.domain.Team;
+import me.bogeun.entity.TeamEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface TeamRepository extends JpaRepository<Team, Long> {
+public interface TeamRepository extends JpaRepository<TeamEntity, Long> {
 }
