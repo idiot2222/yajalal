@@ -2,14 +2,15 @@ package me.bogeun.adapter;
 
 import lombok.RequiredArgsConstructor;
 import me.bogeun.domain.User;
+import me.bogeun.entity.UserEntity;
 import me.bogeun.mapper.UserMapper;
 import me.bogeun.payload.user.UserCreateDto;
 import me.bogeun.payload.user.UserUpdateDto;
 import me.bogeun.port.outgoing.UserPersistencePort;
 import me.bogeun.repository.UserRepository;
+import org.springframework.stereotype.Component;
 
-import java.util.List;
-
+@Component
 @RequiredArgsConstructor
 public class UserPersistenceImpl implements UserPersistencePort {
 
@@ -20,25 +21,25 @@ public class UserPersistenceImpl implements UserPersistencePort {
     public void joinNewUser(UserCreateDto createDto) {
         User user = userMapper.createDtoToUser(createDto);
 
-        userRepository.save(user);
+        UserEntity entity = userMapper.userToEntity(user);
+
+        userRepository.save(entity);
     }
 
     @Override
     public User getUserById(Long userId) {
-        return userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("invalid user id."));
-    }
+        UserEntity entity = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("invalid user id."));
 
-    @Override
-    public List<User> getAllUserList() {
-        return userRepository.findAll();
+        return userMapper.entityToUser(entity);
     }
 
     @Override
     public User updateUserInfo(UserUpdateDto updateDto) {
         User user = getUserById(updateDto.getId());
-
         user.updateInfo(updateDto);
-        userRepository.save(user);
+
+        UserEntity entity = userMapper.userToEntity(user);
+        userRepository.save(entity);
 
         return user;
     }
@@ -46,7 +47,8 @@ public class UserPersistenceImpl implements UserPersistencePort {
     @Override
     public void deleteUser(Long userId) {
         User user = getUserById(userId);
+        UserEntity entity = userMapper.userToEntity(user);
 
-        userRepository.delete(user);
+        userRepository.delete(entity);
     }
 }
