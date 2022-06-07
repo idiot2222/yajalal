@@ -35,13 +35,10 @@ public class PlayerPersistenceImpl implements PlayerPersistencePort {
 
     @Override
     public Player updatePlayer(PlayerUpdateDto updateDto) {
-        Player player = getPlayerById(updateDto.getId());
-        player.updateInfo(updateDto);
-
-        PlayerEntity playerEntity = playerMapper.playerToEntity(player);
+        PlayerEntity playerEntity = playerMapper.updateDtoToEntity(updateDto);
         playerRepository.save(playerEntity);
 
-        return player;
+        return playerMapper.entityToPlayer(playerEntity);
     }
 
     @Override
