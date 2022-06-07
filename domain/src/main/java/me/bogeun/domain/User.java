@@ -2,7 +2,6 @@ package me.bogeun.domain;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.bogeun.payload.user.UserUpdateDto;
 
 import java.time.LocalDateTime;
 
@@ -19,17 +18,4 @@ public class User {
 
     private Gender gender;
 
-
-
-    public void updateInfo(UserUpdateDto updateDto) {
-        String email = updateDto.getEmail();
-        String password = updateDto.getPassword();
-
-        if(email != null) {
-            this.email = email;
-        }
-        if(password != null) {
-            this.password = password;
-        }
-    }
 }
