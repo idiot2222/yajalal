@@ -18,12 +18,13 @@ public class UserPersistenceImpl implements UserPersistencePort {
     private final UserMapper userMapper;
 
     @Override
-    public void joinNewUser(UserCreateDto createDto) {
+    public User joinNewUser(UserCreateDto createDto) {
         User user = userMapper.createDtoToUser(createDto);
-
         UserEntity entity = userMapper.userToEntity(user);
 
         userRepository.save(entity);
+
+        return userMapper.entityToUser(entity);
     }
 
     @Override

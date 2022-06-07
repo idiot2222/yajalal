@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UserPersistencePort {
 
-    void joinNewUser(UserCreateDto createDto);
+    User joinNewUser(UserCreateDto createDto);
 
     User getUserById(Long userId);
 
