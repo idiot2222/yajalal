@@ -18,10 +18,12 @@ public class PlayerPersistenceImpl implements PlayerPersistencePort {
     private final PlayerMapper playerMapper;
 
     @Override
-    public void createPlayer(PlayerCreateDto createDto) {
-        PlayerEntity player = playerMapper.createDtoToPlayerEntity(createDto);
+    public Player createPlayer(PlayerCreateDto createDto) {
+        PlayerEntity playerEntity = playerMapper.createDtoToPlayerEntity(createDto);
 
-        playerRepository.save(player);
+        playerRepository.save(playerEntity);
+
+        return playerMapper.entityToPlayer(playerEntity);
     }
 
     @Override
@@ -36,8 +38,8 @@ public class PlayerPersistenceImpl implements PlayerPersistencePort {
         Player player = getPlayerById(updateDto.getId());
         player.updateInfo(updateDto);
 
-        PlayerEntity entity = playerMapper.playerToEntity(player);
-        playerRepository.save(entity);
+        PlayerEntity playerEntity = playerMapper.playerToEntity(player);
+        playerRepository.save(playerEntity);
 
         return player;
     }
@@ -45,8 +47,9 @@ public class PlayerPersistenceImpl implements PlayerPersistencePort {
     @Override
     public void deletePlayer(Long playerId) {
         Player player = getPlayerById(playerId);
-        PlayerEntity entity = playerMapper.playerToEntity(player);
+        PlayerEntity playerEntity = playerMapper.playerToEntity(player);
 
-        playerRepository.delete(entity);
+        playerRepository.delete(playerEntity);
     }
+
 }
