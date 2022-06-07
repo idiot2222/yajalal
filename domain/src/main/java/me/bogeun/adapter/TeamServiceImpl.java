@@ -25,11 +25,6 @@ public class TeamServiceImpl implements TeamServicePort {
     }
 
     @Override
-    public List<Team> getAllTeamList() {
-        return teamPersistencePort.getAllTeamList();
-    }
-
-    @Override
     public Team updateTeam(TeamUpdateDto updateDto) {
         return teamPersistencePort.updateTeam(updateDto);
     }

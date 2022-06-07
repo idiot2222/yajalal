@@ -12,8 +12,6 @@ public interface PlayerPersistencePort {
 
     Player getPlayerById(Long playerId);
 
-    List<Player> getAllPlayerList();
-
     Player updatePlayer(PlayerUpdateDto updateDto);
 
     void deletePlayer(Long playerId);

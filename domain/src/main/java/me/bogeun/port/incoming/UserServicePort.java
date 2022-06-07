@@ -12,8 +12,6 @@ public interface UserServicePort {
 
     User getUserById(Long userId);
 
-    List<User> getAllUserList();
-
     User updateUser(UserUpdateDto updateDto);
 
     void deleteUser(Long userId);

@@ -25,11 +25,6 @@ public class PlayerServiceImpl implements PlayerServicePort {
     }
 
     @Override
-    public List<Player> getAllPlayerList() {
-        return playerPersistencePort.getAllPlayerList();
-    }
-
-    @Override
     public Player updatePlayer(PlayerUpdateDto updateDto) {
         return playerPersistencePort.updatePlayer(updateDto);
     }

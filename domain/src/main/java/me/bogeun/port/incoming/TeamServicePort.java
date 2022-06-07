@@ -12,8 +12,6 @@ public interface TeamServicePort {
 
     Team getTeamById(Long teamId);
 
-    List<Team> getAllTeamList();
-
     Team updateTeam(TeamUpdateDto updateDto);
 
     void deleteTeam(Long teamId);

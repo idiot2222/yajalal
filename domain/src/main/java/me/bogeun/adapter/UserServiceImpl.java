@@ -25,11 +25,6 @@ public class UserServiceImpl implements UserServicePort {
     }
 
     @Override
-    public List<User> getAllUserList() {
-        return userPersistencePort.getAllUserList();
-    }
-
-    @Override
     public User updateUser(UserUpdateDto updateDto) {
         return userPersistencePort.updateUserInfo(updateDto);
     }

@@ -12,8 +12,6 @@ public interface UserPersistencePort {
 
     User getUserById(Long userId);
 
-    List<User> getAllUserList();
-
     User updateUserInfo(UserUpdateDto updateDto);
 
     void deleteUser(Long userId);
