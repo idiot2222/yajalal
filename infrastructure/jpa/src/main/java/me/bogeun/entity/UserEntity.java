@@ -5,7 +5,7 @@ import lombok.Setter;
 import me.bogeun.domain.Gender;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -26,7 +26,7 @@ public class UserEntity {
     @Column(length = 30)
     private String email;
 
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;
