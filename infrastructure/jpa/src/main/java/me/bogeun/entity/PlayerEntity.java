@@ -1,11 +1,17 @@
 package me.bogeun.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 import me.bogeun.domain.Position;
 
 import javax.persistence.*;
 
+@ToString
+@Getter
+@Setter
 @Entity
-@Table(name = "Player")
+@Table(name = "PLAYER")
 public class PlayerEntity {
 
     @Id

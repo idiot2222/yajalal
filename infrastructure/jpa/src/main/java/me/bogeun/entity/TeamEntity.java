@@ -1,7 +1,12 @@
 package me.bogeun.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "TEAM")
 public class TeamEntity {
@@ -13,6 +18,7 @@ public class TeamEntity {
     @Column(length = 10)
     private String name;
 
+    @Column(name = "LIMIT_COUNT")
     private int limit;
 
     @Column(length = 50)

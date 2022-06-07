@@ -1,10 +1,14 @@
 package me.bogeun.entity;
 
+import lombok.Getter;
+import lombok.Setter;
 import me.bogeun.domain.Gender;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "USER")
 public class UserEntity {
