@@ -1,5 +1,10 @@
 package me.bogeun.payload.team;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class TeamCreateDto {
 
     private String name;

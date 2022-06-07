@@ -1,7 +1,11 @@
 package me.bogeun.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import me.bogeun.payload.player.PlayerUpdateDto;
 
+@Getter
+@Setter
 public class Player {
 
     private Long id;

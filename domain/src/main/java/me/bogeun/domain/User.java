@@ -1,9 +1,13 @@
 package me.bogeun.domain;
 
+import lombok.Getter;
+import lombok.Setter;
 import me.bogeun.payload.user.UserUpdateDto;
 
 import java.time.LocalDateTime;
 
+@Getter
+@Setter
 public class User {
 
     private Long id;
