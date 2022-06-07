@@ -10,9 +10,6 @@ import org.mapstruct.Mapping;
 public interface TeamMapper {
 
     @Mapping(target = "id", ignore = true)
-    Team createDtoToTeam(TeamCreateDto createDto);
-
-    @Mapping(target = "id", ignore = true)
     TeamEntity createDtoToEntity(TeamCreateDto createDto);
 
     Team entityToTeam(TeamEntity entity);
