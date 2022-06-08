@@ -4,4 +4,3 @@ include 'infrastructure'
 include 'infrastructure:jpa'
 include 'boot'
 include 'presentation'
-
