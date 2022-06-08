@@ -2,23 +2,21 @@ plugins {
     id 'java'
 }
 
+subprojects {
+    ext {
+        lombokVersion = "1.18.24"
+        springBootVersion = "2.6.7"
+        springVersion = "5.3.19"
+        mapstructVersion = "1.4.2.Final"
+        junitVersion = "5.8.1"
+    }
+}
+
 group 'me.bogeun'
 version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-}
-
-subprojects {
-    buildscript {
-        ext {
-            lombokVersion = "1.18.24"
-            springBootVersion = "2.6.7"
-            springVersion = "5.3.19"
-            mapstructVersion = "1.4.2.Final"
-            junitVersion = "5.8.1"
-        }
-    }
 }
 
 test {
