@@ -2,4 +2,6 @@ rootProject.name = 'yajalal'
 include 'domain'
 include 'infrastructure'
 include 'infrastructure:jpa'
+include 'boot'
+include 'presentation'
 
