@@ -12,8 +12,6 @@ repositories {
 dependencies {
     implementation project(":domain")
 
-    implementation "org.springframework:spring-core:$springVersion"
-    implementation "org.springframework:spring-context:$springVersion"
     implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
 
     // 이걸 왜 추가해야 하는지 모르겠음 jpa의 entityManager와 연관있고, jdk11 이후 버전을 쓰면 문제가 생기는듯
