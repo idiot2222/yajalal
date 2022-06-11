@@ -1,12 +1,19 @@
 package me.bogeun.adapter;
 
 import me.bogeun.TestConfig;
+import me.bogeun.domain.Gender;
 import me.bogeun.domain.Player;
 import me.bogeun.domain.Position;
+import me.bogeun.domain.User;
 import me.bogeun.mapper.PlayerMapper;
 import me.bogeun.payload.player.PlayerCreateDto;
 import me.bogeun.payload.player.PlayerUpdateDto;
+import me.bogeun.payload.user.UserCreateDto;
+import me.bogeun.port.incoming.UserServicePort;
 import me.bogeun.port.outgoing.PlayerPersistencePort;
+import me.bogeun.port.outgoing.UserPersistencePort;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,6 +22,9 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import javax.transaction.Transactional;
+
+import java.time.LocalDate;
+import java.util.function.Supplier;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -26,9 +36,26 @@ class PlayerPersistenceImplTest {
 
     @Autowired
     PlayerPersistencePort playerPersistencePort;
-
+    @Autowired
+    UserPersistencePort userPersistencePort;
     @Autowired
     PlayerMapper playerMapper;
+
+    Long userId;
+
+    @BeforeEach
+    void beforeAll() {
+        UserCreateDto createDto = new UserCreateDto();
+        createDto.setUsername("testuser");
+        createDto.setPassword("password");
+        createDto.setEmail("test123@email.com");
+        createDto.setBirthDate(LocalDate.of(2000, 1 ,1));
+        createDto.setGender(Gender.MALE);
+
+        User user = userPersistencePort.joinNewUser(createDto);
+
+        userId = user.getId();
+    }
 
     @Test
     @DisplayName("createPlayer(), getPlayerById()")
@@ -40,7 +67,7 @@ class PlayerPersistenceImplTest {
         createDto.setDescription("babo");
         createDto.setPosition(Position.P);
 
-        Player player = playerPersistencePort.createPlayer(createDto);
+        Player player = playerPersistencePort.createPlayer(createDto, userId);
         Player foundPlayer = playerPersistencePort.getPlayerById(player.getId());
 
         assertEquals(player.getName(), foundPlayer.getName());
@@ -53,7 +80,7 @@ class PlayerPersistenceImplTest {
     @Test
     void updatePlayer() {
         PlayerCreateDto createDto = new PlayerCreateDto();
-        Long playerId = playerPersistencePort.createPlayer(createDto).getId();
+        Long playerId = playerPersistencePort.createPlayer(createDto, userId).getId();
 
         PlayerUpdateDto updateDto = new PlayerUpdateDto();
         updateDto.setId(playerId);
@@ -74,7 +101,7 @@ class PlayerPersistenceImplTest {
     @Test
     void deletePlayer() {
         PlayerCreateDto createDto = new PlayerCreateDto();
-        Long playerId = playerPersistencePort.createPlayer(createDto).getId();
+        Long playerId = playerPersistencePort.createPlayer(createDto, userId).getId();
 
         playerPersistencePort.deletePlayer(playerId);
 

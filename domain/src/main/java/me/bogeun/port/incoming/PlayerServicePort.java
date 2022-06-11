@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PlayerServicePort {
 
-    void createPlayer(PlayerCreateDto createDto);
+    void createPlayer(PlayerCreateDto createDto, Long userId);
 
     Player getPlayerById(Long playerId);
 

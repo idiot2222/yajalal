@@ -6,7 +6,7 @@ import me.bogeun.payload.player.PlayerUpdateDto;
 
 public interface PlayerPersistencePort {
 
-    Player createPlayer(PlayerCreateDto createDto);
+    Player createPlayer(PlayerCreateDto createDto, Long userId);
 
     Player getPlayerById(Long playerId);
 
