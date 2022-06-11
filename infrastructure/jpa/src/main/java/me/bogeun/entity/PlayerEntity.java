@@ -7,7 +7,6 @@ import me.bogeun.domain.Position;
 
 import javax.persistence.*;
 
-@ToString
 @Getter
 @Setter
 @Entity
@@ -30,5 +29,11 @@ public class PlayerEntity {
 
     @Enumerated(EnumType.STRING)
     private Position position;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private UserEntity user;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private TeamEntity team;
 
 }
