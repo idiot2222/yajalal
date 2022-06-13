@@ -28,9 +28,7 @@ public class UserController {
 
     @PostMapping("/update/{userId}")
     public User updateUserInfo(@PathVariable Long userId, UserUpdateDto updateDto) {
-        updateDto.setId(userId);
-
-        return userServicePort.updateUser(updateDto);
+        return userServicePort.updateUser(updateDto, userId);
     }
 
     @PostMapping("/delete/{userId}")
