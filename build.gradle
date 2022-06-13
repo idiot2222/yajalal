@@ -5,6 +5,7 @@ allprojects {
         springVersion = "5.3.19"
         mapstructVersion = "1.4.2.Final"
         junitVersion = "5.8.1"
+        mockitoVersion = "4.6.1"
     }
 
     apply plugin: 'java'
@@ -19,6 +20,9 @@ allprojects {
     dependencies {
         compileOnly "org.projectlombok:lombok:$lombokVersion"
         annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+
+        testImplementation "org.mockito:mockito-core:$mockitoVersion"
+        testImplementation "org.mockito:mockito-junit-jupiter:$mockitoVersion"
 
         testImplementation "org.junit.jupiter:junit-jupiter-api:$junitVersion"
         testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:$junitVersion"
