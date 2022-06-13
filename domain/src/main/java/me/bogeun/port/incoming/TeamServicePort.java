@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface TeamServicePort {
 
-    void createTeam(TeamCreateDto createDto);
+    Team createTeam(TeamCreateDto createDto);
 
     Team getTeamById(Long teamId);
 

@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UserServicePort {
 
-    void createUser(UserCreateDto createDto);
+    User createUser(UserCreateDto createDto);
 
     User getUserById(Long userId);
 
