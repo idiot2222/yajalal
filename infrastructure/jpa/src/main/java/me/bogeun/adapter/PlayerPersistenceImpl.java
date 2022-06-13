@@ -11,7 +11,6 @@ import me.bogeun.payload.player.PlayerUpdateDto;
 import me.bogeun.port.outgoing.PlayerPersistencePort;
 import me.bogeun.port.outgoing.UserPersistencePort;
 import me.bogeun.repository.PlayerRepository;
-import me.bogeun.repository.UserRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -42,8 +41,10 @@ public class PlayerPersistenceImpl implements PlayerPersistencePort {
     }
 
     @Override
-    public Player updatePlayer(PlayerUpdateDto updateDto) {
+    public Player updatePlayer(PlayerUpdateDto updateDto, Long playerId) {
         PlayerEntity playerEntity = playerMapper.updateDtoToEntity(updateDto);
+        playerEntity.setId(playerId);
+
         playerRepository.save(playerEntity);
 
         return playerMapper.entityToPlayer(playerEntity);

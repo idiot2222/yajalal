@@ -12,7 +12,7 @@ public interface UserPersistencePort {
 
     User getUserById(Long userId);
 
-    User updateUserInfo(UserUpdateDto updateDto);
+    User updateUserInfo(UserUpdateDto updateDto, Long userId);
 
     void deleteUser(Long userId);
 

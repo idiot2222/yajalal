@@ -34,7 +34,7 @@ public class TeamPersistenceImpl implements TeamPersistencePort {
     }
 
     @Override
-    public Team updateTeam(TeamUpdateDto updateDto) {
+    public Team updateTeam(TeamUpdateDto updateDto, Long teamId) {
         TeamEntity teamEntity = teamMapper.updateDtoToEntity(updateDto);
         teamRepository.save(teamEntity);
 

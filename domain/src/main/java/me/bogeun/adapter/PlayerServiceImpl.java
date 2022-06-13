@@ -15,8 +15,8 @@ public class PlayerServiceImpl implements PlayerServicePort {
     private final PlayerPersistencePort playerPersistencePort;
 
     @Override
-    public void createPlayer(PlayerCreateDto createDto, Long userId) {
-        playerPersistencePort.createPlayer(createDto, userId);
+    public Player createPlayer(PlayerCreateDto createDto, Long userId) {
+        return playerPersistencePort.createPlayer(createDto, userId);
     }
 
     @Override
@@ -25,8 +25,8 @@ public class PlayerServiceImpl implements PlayerServicePort {
     }
 
     @Override
-    public Player updatePlayer(PlayerUpdateDto updateDto) {
-        return playerPersistencePort.updatePlayer(updateDto);
+    public Player updatePlayer(PlayerUpdateDto updateDto, Long playerId) {
+        return playerPersistencePort.updatePlayer(updateDto, playerId);
     }
 
     @Override

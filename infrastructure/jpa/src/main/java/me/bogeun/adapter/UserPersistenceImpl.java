@@ -35,7 +35,7 @@ public class UserPersistenceImpl implements UserPersistencePort {
     }
 
     @Override
-    public User updateUserInfo(UserUpdateDto updateDto) {
+    public User updateUserInfo(UserUpdateDto updateDto, Long userId) {
         UserEntity userEntity = userMapper.updateDtoToEntity(updateDto);
         userRepository.save(userEntity);
 

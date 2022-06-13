@@ -47,12 +47,11 @@ class TeamPersistenceImplTest {
         Long teamId = teamPersistencePort.createTeam(createDto).getId();
 
         TeamUpdateDto updateDto = new TeamUpdateDto();
-        updateDto.setId(teamId);
         updateDto.setName("update");
         updateDto.setDescription("update");
         updateDto.setLimit(9);
 
-        Team team = teamPersistencePort.updateTeam(updateDto);
+        Team team = teamPersistencePort.updateTeam(updateDto, teamId);
 
         assertEquals("update", team.getName());
         assertEquals("update", team.getDescription());

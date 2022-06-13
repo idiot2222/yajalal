@@ -15,8 +15,8 @@ public class TeamServiceImpl implements TeamServicePort {
     private final TeamPersistencePort teamPersistencePort;
 
     @Override
-    public void createTeam(TeamCreateDto createDto) {
-        teamPersistencePort.createTeam(createDto);
+    public Team createTeam(TeamCreateDto createDto) {
+        return teamPersistencePort.createTeam(createDto);
     }
 
     @Override
@@ -25,8 +25,8 @@ public class TeamServiceImpl implements TeamServicePort {
     }
 
     @Override
-    public Team updateTeam(TeamUpdateDto updateDto) {
-        return teamPersistencePort.updateTeam(updateDto);
+    public Team updateTeam(TeamUpdateDto updateDto, Long teamId) {
+        return teamPersistencePort.updateTeam(updateDto, teamId);
     }
 
     @Override

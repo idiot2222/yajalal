@@ -8,8 +8,6 @@ import me.bogeun.domain.Position;
 @Setter
 public class PlayerUpdateDto {
 
-    private Long id;
-
     private int length;
     private int weight;
 

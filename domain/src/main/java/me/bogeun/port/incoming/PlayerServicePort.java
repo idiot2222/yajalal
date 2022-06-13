@@ -12,7 +12,7 @@ public interface PlayerServicePort {
 
     Player getPlayerById(Long playerId);
 
-    Player updatePlayer(PlayerUpdateDto updateDto);
+    Player updatePlayer(PlayerUpdateDto updateDto, Long playerId);
 
     void deletePlayer(Long playerId);
 

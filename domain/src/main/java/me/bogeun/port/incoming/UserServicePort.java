@@ -12,7 +12,7 @@ public interface UserServicePort {
 
     User getUserById(Long userId);
 
-    User updateUser(UserUpdateDto updateDto);
+    User updateUser(UserUpdateDto updateDto, Long userId);
 
     void deleteUser(Long userId);
 

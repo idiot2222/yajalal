@@ -83,13 +83,12 @@ class PlayerPersistenceImplTest {
         Long playerId = playerPersistencePort.createPlayer(createDto, userId).getId();
 
         PlayerUpdateDto updateDto = new PlayerUpdateDto();
-        updateDto.setId(playerId);
         updateDto.setLength(10);
         updateDto.setWeight(10);
         updateDto.setDescription("TEST");
         updateDto.setPosition(Position.P);
 
-        Player player = playerPersistencePort.updatePlayer(updateDto);
+        Player player = playerPersistencePort.updatePlayer(updateDto, playerId);
 
         assertEquals(playerId, player.getId());
         assertEquals(10, player.getLength());

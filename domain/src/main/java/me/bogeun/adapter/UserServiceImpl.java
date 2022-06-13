@@ -15,8 +15,8 @@ public class UserServiceImpl implements UserServicePort {
     private final UserPersistencePort userPersistencePort;
 
     @Override
-    public void createUser(UserCreateDto createDto) {
-        userPersistencePort.joinNewUser(createDto);
+    public User createUser(UserCreateDto createDto) {
+        return userPersistencePort.joinNewUser(createDto);
     }
 
     @Override
@@ -25,8 +25,8 @@ public class UserServiceImpl implements UserServicePort {
     }
 
     @Override
-    public User updateUser(UserUpdateDto updateDto) {
-        return userPersistencePort.updateUserInfo(updateDto);
+    public User updateUser(UserUpdateDto updateDto, Long userId) {
+        return userPersistencePort.updateUserInfo(updateDto, userId);
     }
 
     @Override

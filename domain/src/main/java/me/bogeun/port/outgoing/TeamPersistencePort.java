@@ -10,7 +10,7 @@ public interface TeamPersistencePort {
 
     Team getTeamById(Long teamId);
 
-    Team updateTeam(TeamUpdateDto updateDto);
+    Team updateTeam(TeamUpdateDto updateDto, Long teamId);
 
     void deleteTeam(Long teamId);
 

@@ -55,11 +55,10 @@ class UserPersistenceImplTest {
         Long userId = userPersistencePort.joinNewUser(createDto).getId();
 
         UserUpdateDto updateDto = new UserUpdateDto();
-        updateDto.setId(userId);
         updateDto.setEmail("update");
         updateDto.setPassword("update");
 
-        User user = userPersistencePort.updateUserInfo(updateDto);
+        User user = userPersistencePort.updateUserInfo(updateDto, userId);
 
         assertEquals(updateDto.getEmail(), user.getEmail());
         assertEquals(updateDto.getPassword(), user.getPassword());
