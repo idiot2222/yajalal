@@ -5,3 +5,5 @@ include 'infrastructure'
 include 'infrastructure:jpa'
 include 'presentation'
 include 'presentation:api'
+include 'presentation:thymeleaf'
+
