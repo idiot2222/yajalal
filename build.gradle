@@ -47,6 +47,12 @@ subprojects {
                 implementation 'io.springfox:springfox-swagger-ui:3.0.0'
             }
         }
+
+        project(":presentation:thymeleaf") {
+            dependencies {
+                implementation "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
+            }
+        }
     }
 
     project(":infrastructure") {
