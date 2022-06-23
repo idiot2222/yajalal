@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/team")
+@RequestMapping("/api/team")
 public class TeamController {
 
     private final TeamServicePort teamServicePort;

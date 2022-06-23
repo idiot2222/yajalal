@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/player")
+@RequestMapping("/api/player")
 public class PlayerController {
 
     private final PlayerServicePort playerServicePort;
