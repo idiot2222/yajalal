@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/player")
-public class PlayerController {
+public class PlayerApiController {
 
     private final PlayerServicePort playerServicePort;
 
