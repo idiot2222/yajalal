@@ -1,8 +1,8 @@
 package me.bogeun.yajalal.config;
 
-import me.bogeun.yajalal.adapter.PlayerServiceImpl;
-import me.bogeun.yajalal.adapter.TeamServiceImpl;
-import me.bogeun.yajalal.adapter.UserServiceImpl;
+import me.bogeun.yajalal.adapter.PlayerServicePortImpl;
+import me.bogeun.yajalal.adapter.TeamServicePortImpl;
+import me.bogeun.yajalal.adapter.UserServicePortImpl;
 import me.bogeun.yajalal.port.incoming.PlayerServicePort;
 import me.bogeun.yajalal.port.incoming.TeamServicePort;
 import me.bogeun.yajalal.port.incoming.UserServicePort;
@@ -17,17 +17,17 @@ public class AppConfig {
 
     @Bean
     public UserServicePort userServicePort(UserPersistencePort userPersistencePort) {
-        return new UserServiceImpl(userPersistencePort);
+        return new UserServicePortImpl(userPersistencePort);
     }
 
     @Bean
     public PlayerServicePort playerServicePort(PlayerPersistencePort playerPersistencePort) {
-        return new PlayerServiceImpl(playerPersistencePort);
+        return new PlayerServicePortImpl(playerPersistencePort);
     }
 
     @Bean
     public TeamServicePort teamServicePort(TeamPersistencePort teamPersistencePort) {
-        return new TeamServiceImpl(teamPersistencePort);
+        return new TeamServicePortImpl(teamPersistencePort);
     }
 
 }

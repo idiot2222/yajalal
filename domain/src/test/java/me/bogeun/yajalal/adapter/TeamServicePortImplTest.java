@@ -15,13 +15,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class TeamServiceImplTest {
+class TeamServicePortImplTest {
 
     @Mock
     TeamPersistencePort teamPersistencePort;
 
     @InjectMocks
-    TeamServiceImpl teamServicePort;
+    TeamServicePortImpl teamServicePort;
 
     TeamCreateDto createDto;
     Team team;

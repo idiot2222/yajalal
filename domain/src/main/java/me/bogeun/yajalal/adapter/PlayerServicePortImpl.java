@@ -8,7 +8,7 @@ import me.bogeun.yajalal.port.incoming.PlayerServicePort;
 import me.bogeun.yajalal.port.outgoing.PlayerPersistencePort;
 
 @RequiredArgsConstructor
-public class PlayerServiceImpl implements PlayerServicePort {
+public class PlayerServicePortImpl implements PlayerServicePort {
 
     private final PlayerPersistencePort playerPersistencePort;
 

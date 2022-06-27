@@ -18,13 +18,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-class UserServiceImplTest {
+class UserServicePortImplTest {
 
     @Mock
     UserPersistencePort userPersistencePort;
 
     @InjectMocks
-    UserServiceImpl userServicePort;
+    UserServicePortImpl userServicePort;
 
     UserCreateDto createDto;
     Long userId;

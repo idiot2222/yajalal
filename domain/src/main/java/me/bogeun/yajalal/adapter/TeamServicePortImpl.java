@@ -8,7 +8,7 @@ import me.bogeun.yajalal.port.incoming.TeamServicePort;
 import me.bogeun.yajalal.port.outgoing.TeamPersistencePort;
 
 @RequiredArgsConstructor
-public class TeamServiceImpl implements TeamServicePort {
+public class TeamServicePortImpl implements TeamServicePort {
 
     private final TeamPersistencePort teamPersistencePort;
 
