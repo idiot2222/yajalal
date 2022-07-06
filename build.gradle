@@ -34,7 +34,18 @@ subprojects {
 }
 
 subprojects {
-    project(":domain")
+    project(":boot") {
+        dependencies {
+            implementation project(":presentation:api")
+            implementation project(":presentation:thymeleaf")
+            implementation project(":domain")
+            implementation project(":infrastructure:jpa")
+
+            implementation "org.springframework.boot:spring-boot-starter:$springBootVersion"
+
+            implementation "org.springframework.boot:spring-boot-devtools:$springBootVersion"
+        }
+    }
 
     project(":presentation") {
         subprojects {
@@ -42,6 +53,7 @@ subprojects {
                 implementation project(":domain")
 
                 implementation "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+                implementation "org.springframework.boot:spring-boot-starter-security:$springBootVersion"
 
                 implementation 'io.springfox:springfox-boot-starter:3.0.0'
                 implementation 'io.springfox:springfox-swagger-ui:3.0.0'
@@ -54,6 +66,8 @@ subprojects {
             }
         }
     }
+
+    project(":domain")
 
     project(":infrastructure") {
         project(":infrastructure:jpa") {
@@ -78,13 +92,4 @@ subprojects {
         }
     }
 
-    project(":boot") {
-        dependencies {
-            implementation project(":domain")
-            implementation project(":presentation:api")
-            implementation project(":infrastructure:jpa")
-
-            implementation "org.springframework.boot:spring-boot-starter:$springBootVersion"
-        }
-    }
 }

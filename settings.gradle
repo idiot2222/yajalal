@@ -1,9 +1,13 @@
 rootProject.name = 'yajalal'
-include 'domain'
+
 include 'boot'
-include 'infrastructure'
-include 'infrastructure:jpa'
+
 include 'presentation'
 include 'presentation:api'
 include 'presentation:thymeleaf'
+
+include 'domain'
+
+include 'infrastructure'
+include 'infrastructure:jpa'
 
