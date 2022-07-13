@@ -37,7 +37,6 @@ subprojects {
     project(":boot") {
         dependencies {
             implementation project(":presentation:api")
-            implementation project(":presentation:thymeleaf")
             implementation project(":domain")
             implementation project(":infrastructure:jpa")
 
@@ -57,12 +56,6 @@ subprojects {
 
                 implementation 'io.springfox:springfox-boot-starter:3.0.0'
                 implementation 'io.springfox:springfox-swagger-ui:3.0.0'
-            }
-        }
-
-        project(":presentation:thymeleaf") {
-            dependencies {
-                implementation "org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion"
             }
         }
     }

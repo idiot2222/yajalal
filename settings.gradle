@@ -4,7 +4,6 @@ include 'boot'
 
 include 'presentation'
 include 'presentation:api'
-include 'presentation:thymeleaf'
 
 include 'domain'
 
