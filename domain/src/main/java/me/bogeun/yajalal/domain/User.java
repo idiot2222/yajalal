@@ -18,4 +18,6 @@ public class User {
 
     private Gender gender;
 
+    private Authority authority;
+
 }
