@@ -1,6 +1,7 @@
 package me.bogeun.yajalal.adapter;
 
 import lombok.RequiredArgsConstructor;
+import me.bogeun.yajalal.domain.Authority;
 import me.bogeun.yajalal.domain.User;
 import me.bogeun.yajalal.payload.user.UserCreateDto;
 import me.bogeun.yajalal.payload.user.UserUpdateDto;
@@ -14,6 +15,8 @@ public class UserServicePortImpl implements UserServicePort {
 
     @Override
     public User createUser(UserCreateDto createDto) {
+        createDto.setAuthority(Authority.COMMON);
+
         return userPersistencePort.joinNewUser(createDto);
     }
 
