@@ -10,7 +10,6 @@ import me.bogeun.yajalal.service.UserService;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/user")
@@ -23,7 +22,6 @@ public class UserApiController {
     @PostMapping("/join")
     public String userJoin(@RequestBody UserCreateDto createDto, Errors errors) throws JsonProcessingException {
         userService.createUser(createDto, errors);
-
         if(errors.hasErrors()) {
             return objectMapper.writeValueAsString(errors.getAllErrors());
         }
