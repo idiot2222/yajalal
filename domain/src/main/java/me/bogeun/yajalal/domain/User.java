@@ -17,7 +17,6 @@ public class User {
     private LocalDate birthDate;
 
     private Gender gender;
-
     private Authority authority;
 
 }

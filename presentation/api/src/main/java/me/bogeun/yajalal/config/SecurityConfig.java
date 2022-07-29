@@ -46,6 +46,7 @@ public class SecurityConfig {
                 .authorizeRequests(authorize -> authorize
                         .anyRequest().permitAll()
                 )
+                .csrf().disable()
                 .formLogin(withDefaults())
                 .httpBasic(withDefaults());
 

@@ -49,4 +49,14 @@ public class UserPersistenceImpl implements UserPersistencePort {
 
         userRepository.delete(entity);
     }
+
+    @Override
+    public boolean hasDuplicateUsername(String username) {
+        return userRepository.countByUsername(username) > 0;
+    }
+
+    @Override
+    public boolean hasDuplicateEmail(String email) {
+        return userRepository.countByEmail(email) > 0;
+    }
 }

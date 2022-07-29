@@ -14,4 +14,8 @@ public interface UserPersistencePort {
 
     void deleteUser(Long userId);
 
+    boolean hasDuplicateUsername(String username);
+
+    boolean hasDuplicateEmail(String email);
+
 }

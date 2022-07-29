@@ -23,12 +23,11 @@ public class UserCreateDto {
     private Authority authority;
 
     @Builder
-    public UserCreateDto(String username, String password, String email, LocalDate birthDate, Gender gender, Authority authority) {
+    public UserCreateDto(String username, String password, String email, LocalDate birthDate, Gender gender) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.birthDate = birthDate;
         this.gender = gender;
-        this.authority = authority;
     }
 }

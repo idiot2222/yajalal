@@ -15,8 +15,6 @@ public class UserServicePortImpl implements UserServicePort {
 
     @Override
     public User createUser(UserCreateDto createDto) {
-        createDto.setAuthority(Authority.COMMON);
-
         return userPersistencePort.joinNewUser(createDto);
     }
 
